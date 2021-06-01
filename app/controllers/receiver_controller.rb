@@ -16,7 +16,7 @@ class ReceiverController < ApplicationController
         #issues_url = params["issues_url"]
         #login_id = ["sender"]["login"]
         
-        params.permit(organization: [:login], repository: [:name], sender: [:login])
+        params.permit(organization: [:login], repository: [:name], sender: [:login]).to_h
     end
 
 end
