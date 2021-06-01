@@ -15,7 +15,9 @@ class ReceiverController < ApplicationController
         #org_id = params["repository"]["id"]
         #issues_url = params["issues_url"]
         #login_id = ["sender"]["login"]
-        params.permit([:repository][:name], :issues_url, [:sender][:login])
+        params.class
+        
+        params.permit(repository: :name, :issues_url, sender: :login)
     end
 
 end
