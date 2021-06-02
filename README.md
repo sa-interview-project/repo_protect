@@ -4,4 +4,6 @@
 
 # Who do I contact if I run into issues?
 
+# Design choices
+
 # Next steps for improvement

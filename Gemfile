@@ -12,6 +12,9 @@ gem "octokit", "~> 4.0"
 
 gem 'sidekiq'
 
+# Using a .env for managing secrets
+gem 'dotenv'
+
 gem 'pg'
 
 # Reduces boot times through caching; required in config/boot.rb

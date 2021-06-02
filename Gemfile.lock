@@ -65,6 +65,7 @@ GEM
     concurrent-ruby (1.1.8)
     connection_pool (2.2.5)
     crass (1.0.6)
+    dotenv (2.7.6)
     erubi (1.10.0)
     faraday (1.4.2)
       faraday-em_http (~> 1.0)
@@ -179,6 +180,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
+  dotenv
   listen (~> 3.2)
   octokit (~> 4.0)
   pg
