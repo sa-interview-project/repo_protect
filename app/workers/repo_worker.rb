@@ -8,7 +8,7 @@ class RepoWorker
         member_id = repo_params["sender"]["login"]
 
         # Initialize Oktokit client
-        client = Oktokit::Client.new(:access_token => ENV["GITHUB_ACCESS_TOKEN"])
+        client = Octokit::Client.new(:access_token => ENV["GITHUB_ACCESS_TOKEN"])
 
         # Create new protection on master branch, requiring PR before merging
         client.protect_branch("sa-interview-project/#{repo_name}", "master", {

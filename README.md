@@ -31,7 +31,7 @@ Finally, a new issue is created which pings the user who created the repo. The o
 
 If there are any problems, concerns, or questions with this service, please don't hesitate to open a new Issue in _this_ repository (`repo_protect`) and ping @apdarr explaining your thoughts. 
 
-# Next steps for improvement
+# Next steps for improvement:
 
 There are a few ways in which this project can be refined. Firstly, it doesn't have tests configured. While this proof-of-concept didn't _necessarily_ require tests, it's a best practice to add them for more robust usage. 
 
