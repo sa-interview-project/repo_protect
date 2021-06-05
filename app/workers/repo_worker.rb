@@ -6,6 +6,10 @@ class RepoWorker
         repo_name = push_params["repository"]["full_name"]
         pusher_id = push_params["pusher"]["name"]
 
+        puts push_params
+        puts repo_name
+        puts pusher_id
+
         # Initialize Oktokit client
         client = Octokit::Client.new(:access_token => ENV["GITHUB_ACCESS_TOKEN"])
 
