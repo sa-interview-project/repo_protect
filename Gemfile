@@ -12,6 +12,8 @@ gem "octokit", "~> 4.0"
 
 gem 'sidekiq'
 
+gem 'platform-api'
+
 # Using a .env for managing secrets
 gem 'dotenv'
 
