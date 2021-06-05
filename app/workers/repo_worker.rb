@@ -8,6 +8,8 @@ class RepoWorker
         
         # Configure Heroku client
         heroku = PlatformAPI.connect_oauth(ENV['H_OAUTH_TOKEN'])
+        PlatformAPI.rate_throttle = RateThrottleClient::Null.new
+
         puts heroku
         notified_repos = heroku.config_var.info_for_app('repo-protect')['NOTIFIED_REPOS']
         puts notified_repos
