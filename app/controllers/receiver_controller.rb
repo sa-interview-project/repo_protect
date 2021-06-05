@@ -5,8 +5,6 @@ class ReceiverController < ApplicationController
         # Since we'll be making outbound requests to the GitHub and Heroku API, we want to perform this asyncrhonously with Sidekiq 
         RepoWorker.perform_async(push_params)
     end
-
-    end
     
     private 
     
