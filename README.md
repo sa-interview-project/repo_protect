@@ -17,7 +17,7 @@ If, however, you'd like to manage this service directly ping @apdarr in order to
 
 When a new org is created, GitHub sends a webhook the app's `/receive` endpoint. In GitHub, you can confirm this destination by naviging to the org's settings -> Webhooks -> and then viewing the Callback URL. 
 
-With the configuration in `routes.rb`, this request is routed to the `ReceiverController#create` method. Note that there's a private method called `repo_params` in `ReceiverController`. This private method acts as a basic Allow List so that only certain param keys are permitted for ingestion. 
+With the configuration in `routes.rb`, this request is routed to the `ReceiverController#create` method. Note that there's a private method called `push_params` in `ReceiverController`. This private method acts as a basic Allow List so that only certain param keys are permitted for ingestion. 
 
 While not perfect, this generally refines the controller to only accept webhook's from our webhook in GitHub. Otherwise, this endpoint would be more susceptible against random JSON payloads being sent /receive, should an actor somehow have access to this URL. Performance-wise a smaller JSON blob passed to the controller, there's less performance overhead on our app. 
 
