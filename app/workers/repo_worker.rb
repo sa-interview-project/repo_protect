@@ -20,7 +20,7 @@ class RepoWorker
             # Append new repo name and update the config var
             notified_repos += "," + repo_name
             # Update config var with refreshed list
-            heroku.config_var.update('repo_protect', {'NOTIFIED_REPOS' => notified_repos})
+            heroku.config_var.update('repo-protect', {'NOTIFIED_REPOS' => notified_repos})
 
             # Initialize Octokit client
             client = Octokit::Client.new(:access_token => ENV["GITHUB_ACCESS_TOKEN"])
