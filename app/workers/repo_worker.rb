@@ -42,6 +42,7 @@ class RepoWorker
                     * Once they've approved, you'll be able to merge into master. 
                     * This restriction also to all users with admin privilege.  
                 HEREDOC
-        end        
+            )
+        end
     end
 end
