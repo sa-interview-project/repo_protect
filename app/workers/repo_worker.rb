@@ -7,8 +7,11 @@ class RepoWorker
         pusher_id = push_params["pusher"]["name"]
         
         # Configure Heroku client
-        heroku = PlatformAPI.connect_oauth(ENV["H_OAUTH_TOKEN"])
-        notified_repos = heroku.config_var.info_for_app('repo-protect')["NOTIFIED_REPOS"]
+        heroku = PlatformAPI.connect_oauth(ENV['H_OAUTH_TOKEN'])
+        puts heroku
+        notified_repos = heroku.config_var.info_for_app('repo-protect')['NOTIFIED_REPOS']
+        puts notified_repos
+        puts repo_name
 
         # If repo name is not Heroku Config, update config var with repo name and create Issue
         if !notified_repos.include?(repo_name)
