@@ -16,9 +16,9 @@ class RepoWorker
         puts repo_name
 
         # If repo name is not Heroku Config, update config var with repo name and create Issue
-        if !notified_repos.include?(repo_name)
+        if !notified_repos.include?(repo_name + ",")
             # Append new repo name and update the config var
-            notified_repos += "," + repo_name
+            notified_repos += "," + repo_name + ","
             # Update config var with refreshed list
             heroku.config_var.update('repo-protect', {'NOTIFIED_REPOS' => notified_repos})
 
@@ -45,7 +45,7 @@ class RepoWorker
                     * To merge your work into the master branch, you'll need to push a feature branch to this repo and open a PR.
                     * You'll need at least one other person on your team to approve your work. 
                     * Once they've approved, you'll be able to merge into master. 
-                    * This restriction also to all users with admin privilege.  
+                    * This restriction also applies to all users with admin privilege.  
                 HEREDOC
             )
         end
