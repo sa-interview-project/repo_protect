@@ -6,16 +6,11 @@ class RepoWorker
         repo_name = push_params["repository"]["full_name"]
         pusher_id = push_params["pusher"]["name"]
         
-        # Configure Heroku client
+        # Configure the Heroku client
         heroku = PlatformAPI.connect_oauth(ENV['H_OAUTH_TOKEN'])
         PlatformAPI.rate_throttle = RateThrottleClient::Null.new
 
-        puts heroku
-        notified_repos = heroku.config_var.info_for_app('repo-protect')['NOTIFIED_REPOS']
-        puts notified_repos
-        puts repo_name
-
-        # If repo name is not Heroku Config, update config var with repo name and create Issue
+        # If repo name is not in the Heroku config var, update config var with repo name and create Issue
         if !notified_repos.include?(repo_name + ",")
             # Append new repo name and update the config var
             notified_repos += "," + repo_name + ","
