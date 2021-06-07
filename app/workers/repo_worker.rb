@@ -8,7 +8,7 @@ class RepoWorker
         
         # Configure the Heroku client
         heroku = PlatformAPI.connect_oauth(ENV['H_OAUTH_TOKEN'])
-        PlatformAPI.rate_throttle = RateThrottleClient::Null.new
+        notified_repos = heroku.config_var.info_for_app('repo-protect')["NOTIFIED_REPOS"]
 
         # If repo name is not in the Heroku config var, update config var with repo name and create Issue
         if !notified_repos.include?(repo_name + ",")
