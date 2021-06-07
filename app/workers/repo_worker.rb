@@ -33,7 +33,7 @@ class RepoWorker
                 })
 
             # Submit issue on the new repo and notify the repo creator with an @-mention, explaining the protection
-            client.create_issue("#{repo_name}", "Master branch protection has been created for the this repo",
+            client.create_issue("#{repo_name}", "Master branch protection has been created for this repo",
                 <<~HEREDOC
                     Hi @#{pusher_id}! We've enabled protection for this repository's master branch. Here's what this means:
 
